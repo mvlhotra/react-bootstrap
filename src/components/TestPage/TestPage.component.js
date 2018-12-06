@@ -6,6 +6,11 @@ import testService from 'services/test.service';
 import { test } from 'actions/TestPage.actions';
 
 class TestPage extends Component {
+  componentDidMount() {
+    testService.test();
+    this.props.test();
+  }
+
   render() {
     return (
       <div className="TestPage">
@@ -23,7 +28,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-
+    test: () => dispatch(test('test')),
   };
 }
 
