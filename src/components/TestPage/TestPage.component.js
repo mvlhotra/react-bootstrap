@@ -14,7 +14,7 @@ class TestPage extends Component {
   render() {
     return (
       <div className="TestPage">
-        This is a test page.
+        yorp
       </div>
     );
   }
