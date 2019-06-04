@@ -18,14 +18,17 @@ const dataArray = [
   ["nhl", "north_america", "usa", "florida", "66", "23", "77", "23", "77", "33", "43"]
 ]
 
-function getData(data, ind) {
-  let dataSet = new Set();
+function parseData(data) {
+  let dataPoints = [];
   for (i = 1; i < data.length; i++) {
-    if (data[i][ind] !== '') {
-      dataSet.add(data[i][ind]);
-    };
+    let dataObj = {};
+    data[i].forEach((attribute, ind) => {
+      dataObj[data[0][ind]] = attribute;
+    });
+    dataPoints.push(dataObj);
   }
-  return dataSet;
+  return dataPoints;
 }
 
-console.log(Array.from(getData(dataArray, 2)));
+
+console.log(parseData(dataArray));
