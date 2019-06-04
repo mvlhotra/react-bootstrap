@@ -15,12 +15,11 @@ const dataArray = [
   ["nhl", "north_america", "canada", "quebec", "86", "45", "23", "77", "33", "33", "56"],
   ["nhl", "north_america", "usa", "washington", "42", "86", "54", "45", "23", "99", "77"],
   ["nhl", "north_america", "usa", "california", "23", "42", "23", "33", "66", "23", "77"],
-  ["nhl", "north_america", "usa", "florida", "66", "23", "77", "23", "77", "33", "43"]
-]
+  ["nhl", "north_america", "usa", "florida", "66", "23", "77", "23", "77", "33", "43"]];
 
 function parseData(data) {
   let dataPoints = [];
-  for (i = 1; i < data.length; i++) {
+  for (let i = 1; i < data.length; i++) {
     let dataObj = {};
     data[i].forEach((attribute, ind) => {
       dataObj[data[0][ind]] = attribute;
@@ -30,5 +29,28 @@ function parseData(data) {
   return dataPoints;
 }
 
+function search(data, criteria) {
+  let filtered = [];
+  data.forEach(point => {
+    let match = true;
+    Object.keys(point).forEach(attribute => {
+      if (criteria[attribute] && (point[attribute] !== criteria[attribute])) {
+        match = false;
+      }
+    });
+    if (match) {
+      filtered.push(point);
+    }
+  })
+  return filtered;
+}
 
-console.log(parseData(dataArray));
+function getData(data, ind) {
+  let dataSet = new Set();
+  for (let i = 1; i < data.length; i++) {
+    dataSet.add(data[i][ind]);
+  }
+  return Array.from(dataSet);
+}
+
+export { dataArray, parseData, search, getData };
