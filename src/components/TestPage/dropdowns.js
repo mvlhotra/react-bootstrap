@@ -6,15 +6,15 @@ function makeDropdownItem(item) {
   return <option key={item} value={item}>{item}</option>;
 }
 
-class Dropdown extends Component {
+class Dropdowns extends Component {
   constructor(props) {
     super(props);
-    this.state = { continentValue: 'north_america', countryValue: '', stateValue: '', results: {}, data: parseData(dataArray) };
+    this.state = { continentValue: '', countryValue: '', stateValue: '', results: {}, data: parseData(dataArray) };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(event) {
-    //  I know, I know. This could be done better I'm sure :) 
+    //  I know, I know. This could've been done better... I'm sure :) 
     if (event.target.className === 'continent') {
       this.setState({ continentValue: event.target.value })
     } else if (event.target.className === 'country') {
@@ -46,7 +46,7 @@ class Dropdown extends Component {
             </select>
           </label>
           <label>
-            State:
+            State/Province:
           <select value={this.state.stateValue} className="state" onChange={this.handleChange}>
               {getData(dataArray, 3).map(makeDropdownItem)}
             </select>
@@ -58,4 +58,4 @@ class Dropdown extends Component {
     )
   }
 }
-export default Dropdown;
+export default Dropdowns;

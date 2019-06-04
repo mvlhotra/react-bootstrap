@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './TestPage.scss'
 import testService from 'services/test.service';
 import { test } from 'actions/TestPage.actions';
-import Dropdown from './dropdowns';
+import Dropdowns from './Dropdowns';
 import Title from './Title';
 
 class TestPage extends Component {
@@ -17,7 +17,7 @@ class TestPage extends Component {
     return (
       <div className="TestPage">
         <Title />
-        <Dropdown />
+        <Dropdowns />
       </div>
     );
   }

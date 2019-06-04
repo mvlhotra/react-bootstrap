@@ -5,10 +5,10 @@ import { JsonTable } from 'react-json-to-html';
 class Results extends Component {
   render() {
     return (
-      <div>
+      <div className="search-results">
         <hr></hr>
         <h1>Results</h1>
-        <JsonTable json={this.props.results} />
+        <JsonTable className="result-table" json={this.props.results} />
       </div>
     );
   }
