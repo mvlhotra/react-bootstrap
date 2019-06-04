@@ -6,7 +6,6 @@ import testService from 'services/test.service';
 import { test } from 'actions/TestPage.actions';
 import Dropdown from './dropdowns';
 import Title from './Title';
-import Results from './Results';
 
 class TestPage extends Component {
   componentDidMount() {
@@ -19,8 +18,6 @@ class TestPage extends Component {
       <div className="TestPage">
         <Title />
         <Dropdown />
-        <hr></hr>
-        <Results />
       </div>
     );
   }

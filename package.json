@@ -48,6 +48,8 @@
     "react-csv-reader": "^1.2.2",
     "react-dev-utils": "^6.1.1",
     "react-dom": "^16.6.3",
+    "react-json-table": "^0.1.1",
+    "react-json-to-html": "^0.0.3",
     "react-redux": "6",
     "react-router": "^4.3.1",
     "redux": "^4.0.1",

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Results from './Results'
+import { JsonTable } from 'react-json-to-html';
+
 
 const dataArray = [
   ["property_name", "continent", "country", "state_province", "engagement", "daily_weekly", "momentum", "passion", "excitement", "consideration", "favorability"],
@@ -44,7 +47,6 @@ function search(data, criteria) {
       filtered.push(point);
     }
   })
-  console.log(filtered);
   return filtered;
 }
 
@@ -60,14 +62,24 @@ function makeItem(item) {
   return <option key={item} value={item}>{item}</option>;
 }
 
+function makeTable(results) {
+  return (
+    <div>
+
+    </div>
+  )
+}
+
 class Dropdown extends Component {
   constructor(props) {
     super(props);
-    this.state = { continentValue: 'north_america', countryValue: '', stateValue: '', results: '', data: parseData(dataArray) };
+    this.state = { continentValue: 'north_america', countryValue: '', stateValue: '', results: {}, data: parseData(dataArray) };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(event) {
+    //  I know, I know. This could be done better I'm sure :) 
+
     if (event.target.className === 'continent') {
       this.setState({ continentValue: event.target.value })
     } else if (event.target.className === 'country') {
@@ -78,7 +90,8 @@ class Dropdown extends Component {
 
   }
   handleSubmit(event) {
-    search(parseData(dataArray), { continent: this.state.continentValue, country: this.state.countryValue, state_province: this.state.stateValue })
+    const results = search(parseData(dataArray), { continent: this.state.continentValue, country: this.state.countryValue, state_province: this.state.stateValue });
+    this.setState({ results: results });
     event.preventDefault();
   }
 
@@ -105,9 +118,9 @@ class Dropdown extends Component {
               {getData(dataArray, 3).map(makeItem)}
             </select>
           </label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Search!" />
         </form>
-        <div>{this.state.results}</div>
+        <Results results={this.state.results} />
       </div>
     )
   }

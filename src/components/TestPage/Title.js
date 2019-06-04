@@ -5,7 +5,7 @@ class Title extends Component {
     return (
       <div className="title">
         <h1>React Data Selector</h1>
-        <p> Filter your data using the dropdowns, and watch the magic happen.</p>
+        <p>Filter using the criteria, then click the Search button, and watch the magic happen!</p>
       </div>
     );
   }

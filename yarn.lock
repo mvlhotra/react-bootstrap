@@ -8005,6 +8005,16 @@ react-is@^16.3.2, react-is@^16.6.3:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"
   integrity sha512-u7FDWtthB4rWibG/+mFbVd5FvdI20yde86qKGx4lVUTWmPlSWQ4QxbBIrrs+HnXGbxOUlUzTAP/VDmvCwaP2yA==
 
+react-json-table@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/react-json-table/-/react-json-table-0.1.1.tgz#712beb9a729167c2d6651987f42c73143217a1d6"
+  integrity sha1-cSvrmnKRZ8LWZRmH9CxzFDIXodY=
+
+react-json-to-html@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/react-json-to-html/-/react-json-to-html-0.0.3.tgz#910c2aebc39a44389ac505b1971a2ef8f704ce0b"
+  integrity sha512-ir/tiSB3Pi5l0U0uCKKtF3/rJcQ0FG9pw4j1R40AS7km+U/bSkrADn0TPCfSiBq3EeNxYHSJLZOfGyrSNr5Bcw==
+
 react-redux@6:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-6.0.0.tgz#09e86eeed5febb98e9442458ad2970c8f1a173ef"
